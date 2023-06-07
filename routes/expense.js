@@ -4,8 +4,10 @@ const express = require('express');
 const router = express.Router();
 
 // require the middlewares and callback functions from the controller directory
+const {create} = require('../controllers')
 
 // Create POST route to create an expense
+router.post(("/expenses/create", create));
 
 // Create PUT route to update an expense
 
