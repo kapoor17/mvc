@@ -10,6 +10,11 @@ const {create, expenseById, read} = require('../controllers')
 router.post(("/expenses/create", create));
 
 // Create PUT route to update an expense
+/**
+ * expensesById, the middleware function get the req and res and queries the
+ * database to get the data, and then sends that data to the read function using
+ * a next params sent in the middleware function.
+ */
 router.get("/expense/:id", expenseById, read);
 
 // Create DELETE route to remove an expense
