@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { deleteExpense } from '../utils';
 /* import user action function from utils dir
  *
  */
@@ -19,6 +20,7 @@ const ExpenseList = ({ expenses, setExpenses, setId }) => {
     /* send user action to controller
      *
      */
+    deleteExpense(_id);
     setExpenses(expenses.filter((expense) => expense.expense_id !== _id));
   };
 
