@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 // require the middlewares and callback functions from the controller directory
-const {create, expenseById, read, update} = require('../controllers')
+const {create, expenseById, read, update, remove} = require('../controllers')
 
 // Create POST route to create an expense
 router.post(("/expenses/create", create));
@@ -14,6 +14,7 @@ router.put("/expenses/:id", expenseById, update)
 
 
 // Create DELETE route to remove an expense
+router.delete("/expenses/:id",remove);
 
 /**
  * Create GET route to read an expense
